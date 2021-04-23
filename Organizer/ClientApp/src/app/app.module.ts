@@ -7,11 +7,13 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NutyComponent } from './nuty/nuty.component';
+import { FileViewerComponent } from './file-viewer/file-viewer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NutyComponent
+    NutyComponent,
+    FileViewerComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
