@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PhotoService } from '../photo/photo.service';
+
 
 @Component({
   selector: 'app-file-viewer',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FileViewerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private photoService: PhotoService) { }
+  fileNames: any;
+
+
 
   ngOnInit() {
+    this.photoService.getFileList().subscribe(data => { this.fileNames = data })
   }
 
 }

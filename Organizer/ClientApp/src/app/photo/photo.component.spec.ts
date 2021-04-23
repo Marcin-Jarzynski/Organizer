@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NutyComponent } from './nuty.component';
+import { PhotoComponent } from './photo.component';
 
 describe('NutyComponent', () => {
-  let component: NutyComponent;
-  let fixture: ComponentFixture<NutyComponent>;
+  let component: PhotoComponent;
+  let fixture: ComponentFixture<PhotoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NutyComponent ]
+      declarations: [ PhotoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NutyComponent);
+    fixture = TestBed.createComponent(PhotoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

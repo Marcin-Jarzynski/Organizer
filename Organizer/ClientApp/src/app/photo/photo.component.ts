@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { NutyService } from './nuty.service';
+import { PhotoService } from './photo.service';
 
 @Component({
-  selector: 'app-nuty',
-  templateUrl: './nuty.component.html',
-  styleUrls: ['./nuty.component.css']
+  selector: 'app-photo',
+  templateUrl: './photo.component.html',
+  styleUrls: ['./photo.component.css']
 })
-export class NutyComponent implements OnInit {
+export class PhotoComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private nutyService: NutyService
+    private nutyService: PhotoService
     ) { }
 
   public form: FormGroup;

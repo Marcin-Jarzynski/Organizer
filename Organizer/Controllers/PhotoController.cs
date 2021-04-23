@@ -13,10 +13,10 @@ namespace Organizer.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class NutyController : Controller
+    public class PhotoController : Controller
     {
         private readonly IWebHostEnvironment _environment;
-        public NutyController(IWebHostEnvironment environment)
+        public PhotoController(IWebHostEnvironment environment)
         {
             _environment = environment;
         }
@@ -45,6 +45,16 @@ namespace Organizer.Controllers
             }
            
             return Ok();
+        }
+
+        [HttpGet]
+        public IActionResult GetFileList()
+        {
+            string wwwPath = _environment.WebRootPath;
+            string contentPath = _environment.ContentRootPath;
+            string path = Path.Combine(_environment.WebRootPath, "Uploads");
+            var fileList = Directory.EnumerateFiles(path).Select(f => f.Substring(path.Length+1)).ToList();
+            return Ok(fileList);
         }
     }
 }

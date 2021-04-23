@@ -1,4 +1,4 @@
-import { NutyService } from './nuty/nuty.service';
+import { PhotoService } from './photo/photo.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -6,13 +6,13 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NutyComponent } from './nuty/nuty.component';
+import { PhotoComponent } from './photo/photo.component';
 import { FileViewerComponent } from './file-viewer/file-viewer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NutyComponent,
+    PhotoComponent,
     FileViewerComponent
   ],
   imports: [
@@ -24,7 +24,7 @@ import { FileViewerComponent } from './file-viewer/file-viewer.component';
 
     ])
   ],
-  providers: [NutyService],
+  providers: [PhotoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
