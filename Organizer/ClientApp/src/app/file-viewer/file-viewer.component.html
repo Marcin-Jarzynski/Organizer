@@ -1,8 +1,15 @@
-<p>file-viewer works!</p>
-<div>
+<h1>Przegladarka zdjec</h1>
+<button (click)="changeVisibility()">Dodaj zdjecie</button>
+
+<div class="list">
   <p (click)="selectImage(fileName)" href="#" *ngFor="let fileName of fileNames"> {{fileName}}</p>
 </div>
-<img  src="Uploads/{{displayFile}}" alt="hehe papysz" />
+<img *ngIf="displayFile !== null && displayFile !== undefined" src="Uploads/{{displayFile}}" alt="Nie znaleziono obrazka" />
+
+<p-dialog header="Title" [(visible)]="display">
+  <app-photo></app-photo>
+</p-dialog>
+
 
 
 

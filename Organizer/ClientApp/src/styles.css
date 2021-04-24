@@ -17,14 +17,11 @@ code {
 body{
     display: inline-block;
 }
-app-photo{
-    display:inline-block;
-}
 app-file-viewer {
   display: inline-block;
 }
 
-div {
+div .list {
   overflow: hidden;
   overflow-y: scroll;
   height: 200px;
