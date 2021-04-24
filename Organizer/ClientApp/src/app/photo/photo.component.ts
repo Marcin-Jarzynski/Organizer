@@ -20,15 +20,10 @@ export class PhotoComponent implements OnInit {
   ngOnInit() {
     this.formData = new FormData();
     this.form = this.formBuilder.group({
-      id: '',
-      piosenkaId: new FormControl(''),
-      instrumentId: new FormControl(''),
       zdjecie: new FormControl(null)
     })
   }
   onSubmit(){
-    this.formData.append('piosenkaId', this.form.get('piosenkaId').value);
-    this.formData.append('instrumentId', this.form.get('instrumentId').value);
     this.nutyService.post(this.formData).subscribe( () => console.log('git'))
   }
   fileChange(event){

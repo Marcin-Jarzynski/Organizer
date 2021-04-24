@@ -1,7 +1,5 @@
 Formularz dodawania zdjęcia
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <input class="form-control" type="text" placeholder="piosenkaId" formControlName="piosenkaId">
-  <input class="form-control" type="text" placeholder="instrumentId" formControlName="instrumentId">
   <input class="form-control" type="file" formControlName="zdjecie" (change)="fileChange($event)">
   <button type="submit">Zapisz</button>
 </form>

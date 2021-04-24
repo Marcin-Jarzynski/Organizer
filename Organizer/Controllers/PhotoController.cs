@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Organizer.RequestDefinitions;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -22,7 +21,7 @@ namespace Organizer.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromForm]NutyRequest request)
+        public IActionResult Post([FromForm] IFormFile Zdjecie)
         {
             string wwwPath = _environment.WebRootPath;
             string contentPath = _environment.ContentRootPath;
@@ -36,10 +35,10 @@ namespace Organizer.Controllers
 
             List<string> uploadedFiles = new List<string>();
             
-            string fileName = Path.GetFileName(request.Zdjecie.FileName);
+            string fileName = Path.GetFileName(Zdjecie.FileName);
             using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
             {
-                request.Zdjecie.CopyTo(stream);
+                Zdjecie.CopyTo(stream);
                 uploadedFiles.Add(fileName);
                 ViewBag.Message += string.Format("<b>{0}</b> uploaded.<br />", fileName);
             }

@@ -1,6 +1,5 @@
 <p>file-viewer works!</p>
 <div>
-  <!--<img *ngFor="let fileName of fileNames" src="Uploads/{{fileName}}" alt="hehe papysz" />-->
   <p (click)="selectImage(fileName)" href="#" *ngFor="let fileName of fileNames"> {{fileName}}</p>
 </div>
 <img  src="Uploads/{{displayFile}}" alt="hehe papysz" />
