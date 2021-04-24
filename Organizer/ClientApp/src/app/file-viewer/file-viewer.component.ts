@@ -11,6 +11,7 @@ export class FileViewerComponent implements OnInit {
 
   constructor(private photoService: PhotoService) { }
   fileNames: any;
+  displayFile: any;
 
 
 
@@ -18,4 +19,12 @@ export class FileViewerComponent implements OnInit {
     this.photoService.getFileList().subscribe(data => { this.fileNames = data })
   }
 
-}
+  selectImage(imageName: any) {
+    console.log(" so youre thought?")
+    this.displayFile = imageName
+    console.log(imageName)
+  } 
+
+  }
+
+

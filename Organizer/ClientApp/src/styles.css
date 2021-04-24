@@ -23,3 +23,9 @@ app-photo{
 app-file-viewer {
   display: inline-block;
 }
+
+div {
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 200px;
+}
