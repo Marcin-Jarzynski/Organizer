@@ -20,6 +20,7 @@ export class PhotoComponent implements OnInit {
 
   @Output() photoAdded = new EventEmitter();
 
+
   ngOnInit() {
     this.formData = new FormData();
     this.form = this.formBuilder.group({
@@ -29,14 +30,18 @@ export class PhotoComponent implements OnInit {
   onSubmit(){
     this.nutyService.post(this.formData).subscribe(() => {
       this.photoAdded.emit();
+      this.form.reset();
     }
     )
   }
   fileChange(event){
     let fileList: FileList = event.target.files;
     if(fileList.length > 0) {
-        let file: File = fileList[0];
-        this.formData.append('zdjecie', file, file.name);
+      let file: File = fileList[fileList.length - 1];
+      this.formData = new FormData();
+      this.formData.append('zdjecie', file, file.name);
+     
     }
+   
   }
 }

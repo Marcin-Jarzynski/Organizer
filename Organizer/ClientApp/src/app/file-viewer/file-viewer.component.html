@@ -1,8 +1,10 @@
-<h1>Przegladarka zdjec</h1>
-<button (click)="changeVisibility()">Dodaj zdjecie</button>
+<div class="wrapper">
+  <h1>Przegladarka zdjec</h1>
+  <button (click)="changeVisibility()">Dodaj zdjecie</button>
 
-<div class="list">
-  <p (click)="selectImage(fileName)" href="#" *ngFor="let fileName of fileNames"> {{fileName}}</p>
+  <div class="list">
+    <p (click)="selectImage(fileName)" href="#" *ngFor="let fileName of fileNames"> {{fileName}}</p>
+  </div>
 </div>
 <img *ngIf="displayFile !== null && displayFile !== undefined" src="Uploads/{{displayFile}}" alt="Nie znaleziono obrazka" />
 
