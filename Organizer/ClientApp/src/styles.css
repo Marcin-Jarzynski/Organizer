@@ -14,15 +14,14 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
-body{
-    display: inline-block;
+body {
+  display: inline-block;
+  padding-right: 20%;
+  padding-left: 20%;
+  padding-top: 25px;
 }
 app-file-viewer {
   display: inline-block;
-}
-
-div .list {
+  width: 100%;
   overflow: hidden;
-  overflow-y: scroll;
-  height: 200px;
 }

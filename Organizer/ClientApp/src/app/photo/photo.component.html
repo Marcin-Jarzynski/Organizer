@@ -1,4 +1,3 @@
-Formularz dodawania zdjęcia
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <input class="form-control" type="file" formControlName="zdjecie" (change)="fileChange($event)">
   <button type="submit">Zapisz</button>
