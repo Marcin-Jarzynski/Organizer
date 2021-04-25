@@ -27,6 +27,10 @@ export class FileViewerComponent implements OnInit {
   changeVisibility() {
     this.display = true;
   }
+  closeDialog() {
+    this.display = false;
+    this.photoService.getFileList().subscribe(data => { this.fileNames = data })
+  }
   }
 
 

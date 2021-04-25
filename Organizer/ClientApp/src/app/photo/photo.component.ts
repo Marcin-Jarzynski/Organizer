@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { EventEmitter } from '@angular/core';
 import { PhotoService } from './photo.service';
 
 @Component({
@@ -17,6 +18,8 @@ export class PhotoComponent implements OnInit {
   public form: FormGroup;
   private formData: FormData;
 
+  @Output() photoAdded = new EventEmitter();
+
   ngOnInit() {
     this.formData = new FormData();
     this.form = this.formBuilder.group({
@@ -24,7 +27,10 @@ export class PhotoComponent implements OnInit {
     })
   }
   onSubmit(){
-    this.nutyService.post(this.formData).subscribe( () => console.log('git'))
+    this.nutyService.post(this.formData).subscribe(() => {
+      this.photoAdded.emit();
+    }
+    )
   }
   fileChange(event){
     let fileList: FileList = event.target.files;

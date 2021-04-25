@@ -7,7 +7,7 @@
 <img *ngIf="displayFile !== null && displayFile !== undefined" src="Uploads/{{displayFile}}" alt="Nie znaleziono obrazka" />
 
 <p-dialog header="Dodawanie zdjecia" [(visible)]="display">
-  <app-photo></app-photo>
+  <app-photo (photoAdded)="closeDialog()"></app-photo>
 </p-dialog>
 
 
