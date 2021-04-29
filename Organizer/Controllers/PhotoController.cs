@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using SignalRChat.Hubs;
 using System;
 using System.Collections.Generic;
 using System.IO;

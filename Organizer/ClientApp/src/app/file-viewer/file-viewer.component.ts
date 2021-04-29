@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PhotoService } from '../photo/photo.service';
+import { SignalRService } from '../services/signal-r.service';
 
 
 @Component({
@@ -9,16 +10,16 @@ import { PhotoService } from '../photo/photo.service';
 })
 export class FileViewerComponent implements OnInit {
 
-  constructor(private photoService: PhotoService) { }
+  constructor(private photoService: PhotoService, private signalRService: SignalRService) { }
   fileNames: any;
   displayFile: any;
   show: any;
   display: boolean = false;
 
-
-
   ngOnInit() {
-    this.photoService.getFileList().subscribe(data => { this.fileNames = data })
+    this.photoService.getFileList().subscribe(data => { this.fileNames = data });
+    this.signalRService.startConnection();
+    this.signalRService.addTransferChartDataListener();
   }
 
   selectImage(imageName: any) {
@@ -29,8 +30,8 @@ export class FileViewerComponent implements OnInit {
   }
   closeDialog() {
     this.display = false;
-    this.photoService.getFileList().subscribe(data => { this.fileNames = data })
+    this.photoService.getFileList().subscribe(data => { this.fileNames = data; this.signalRService.send(); })
   }
-  }
+}
 
 

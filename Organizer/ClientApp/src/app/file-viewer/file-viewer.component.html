@@ -3,7 +3,7 @@
   <button (click)="changeVisibility()">Dodaj zdjecie</button>
 
   <div class="list">
-    <p (click)="selectImage(fileName)" href="#" *ngFor="let fileName of fileNames"> {{fileName}}</p>
+    <p (click)="selectImage(fileName)" *ngFor="let fileName of fileNames"> {{fileName}}</p>
   </div>
 </div>
 <img *ngIf="displayFile !== null && displayFile !== undefined" src="Uploads/{{displayFile}}" alt="Nie znaleziono obrazka" />
