@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Logging;
 using SignalRChat.Hubs;
 using System;
@@ -16,9 +17,11 @@ namespace Organizer.Controllers
     public class PhotoController : Controller
     {
         private readonly IWebHostEnvironment _environment;
-        public PhotoController(IWebHostEnvironment environment)
+        private readonly IHubContext<ChatHub> _context;
+        public PhotoController(IWebHostEnvironment environment, IHubContext<ChatHub> context)
         {
             _environment = environment;
+            _context = context;
         }
 
         [HttpPost]
@@ -43,7 +46,9 @@ namespace Organizer.Controllers
                 uploadedFiles.Add(fileName);
                 ViewBag.Message += string.Format("<b>{0}</b> uploaded.<br />", fileName);
             }
-           
+
+            _context.Clients.All.SendAsync("ReceiveMessage");
+
             return Ok();
         }
 

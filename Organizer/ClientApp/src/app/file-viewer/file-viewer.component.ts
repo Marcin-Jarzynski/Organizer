@@ -30,7 +30,7 @@ export class FileViewerComponent implements OnInit {
   }
   closeDialog() {
     this.display = false;
-    this.photoService.getFileList().subscribe(data => { this.fileNames = data; this.signalRService.send(); })
+    this.photoService.getFileList().subscribe(data => { this.fileNames = data; })
   }
 }
 
