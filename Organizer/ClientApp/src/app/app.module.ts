@@ -11,12 +11,15 @@ import { FileViewerComponent } from './file-viewer/file-viewer.component';
 import { DialogModule } from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignalRService } from './services/signal-r.service';
+import { LoginComponent } from './login/login.component';
+import { LoginService } from './services/login.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     PhotoComponent,
     FileViewerComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -29,7 +32,7 @@ import { SignalRService } from './services/signal-r.service';
 
     ])
   ],
-  providers: [PhotoService, SignalRService],
+  providers: [PhotoService, SignalRService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
