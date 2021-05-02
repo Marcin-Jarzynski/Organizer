@@ -1,6 +1,6 @@
 import { PhotoService } from './photo/photo.service';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignalRService } from './services/signal-r.service';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './services/login.service';
+
 
 @NgModule({
   declarations: [
@@ -29,6 +30,9 @@ import { LoginService } from './services/login.service';
     DialogModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
+      { path: "login", component: LoginComponent },
+      { path: "fileViewer", component: FileViewerComponent },
+      { path: '**', redirectTo: 'login' }
 
     ])
   ],
