@@ -1,7 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { EventEmitter } from '@angular/core';
-import { PhotoService } from './photo.service';
+import { PhotoService } from '../services/photo.service';
 
 @Component({
   selector: 'app-photo',

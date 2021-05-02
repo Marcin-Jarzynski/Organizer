@@ -1,4 +1,4 @@
-import { PhotoService } from './photo/photo.service';
+import { PhotoService } from './services/photo.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { Component, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignalRService } from './services/signal-r.service';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './services/login.service';
+import { AuthGuard } from './helpers/auth.guard';
 
 
 @NgModule({
@@ -30,8 +31,8 @@ import { LoginService } from './services/login.service';
     DialogModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: "login", component: LoginComponent },
-      { path: "fileViewer", component: FileViewerComponent },
+      { path: "login", component: LoginComponent},
+      { path: "fileViewer", component: FileViewerComponent, canActivate: [AuthGuard] },
       { path: '**', redirectTo: 'login' }
 
     ])
