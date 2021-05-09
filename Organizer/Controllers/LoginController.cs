@@ -26,7 +26,6 @@ namespace Organizer.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] LoginRequest request)
         {
-            Console.WriteLine(request.Login+ " " + request.Password);
             if (request.Login == "ricardo" && request.Password == "milos")
             {
                 return Ok();
