@@ -10,6 +10,7 @@ namespace Organizer.Repositories
         public void Add(Song entity)
         {
             db.Songs.Add(entity);
+            db.SaveChanges();
         }
         public void Delete(Song entity)
         {
