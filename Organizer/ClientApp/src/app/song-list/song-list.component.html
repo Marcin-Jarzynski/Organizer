@@ -1,0 +1,11 @@
+<form [formGroup]="songForm" (ngSubmit)="onSubmit()">
+
+  <label>
+    Piosenka:
+    <input type="text" formControlName="name" required>
+  </label>
+
+  <br />
+  <button type="submit" [disabled]="!songForm.valid">Submit</button>
+
+</form>

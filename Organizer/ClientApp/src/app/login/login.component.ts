@@ -20,15 +20,14 @@ export class LoginComponent implements OnInit {
   }
 
   loginForm = new FormGroup({
-    login: new FormControl(''),
-    password: new FormControl(''),
+    login: new FormControl(),
+    password: new FormControl(),
   });
   
   onSubmit() {
     this.loginService.post(this.loginForm.value).subscribe(
-      () => { this.router.navigate(['/fileViewer']) },
+      () => { this.router.navigate(['/songList']) },
       () => { this.wrong = true}
     );
   }
-
 }

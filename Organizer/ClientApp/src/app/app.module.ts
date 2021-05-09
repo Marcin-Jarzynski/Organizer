@@ -14,6 +14,8 @@ import { SignalRService } from './services/signal-r.service';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './services/login.service';
 import { AuthGuard } from './helpers/auth.guard';
+import { SongListComponent } from './song-list/song-list.component';
+import { SongService } from './services/song.service';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { AuthGuard } from './helpers/auth.guard';
     AppComponent,
     PhotoComponent,
     FileViewerComponent,
-    LoginComponent
+    LoginComponent,
+    SongListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -33,11 +36,12 @@ import { AuthGuard } from './helpers/auth.guard';
     RouterModule.forRoot([
       { path: "login", component: LoginComponent},
       { path: "fileViewer", component: FileViewerComponent, canActivate: [AuthGuard] },
+      { path: "songList", component: SongListComponent, canActivate: [AuthGuard] },
       { path: '**', redirectTo: 'login' }
 
     ])
   ],
-  providers: [PhotoService, SignalRService, LoginService],
+  providers: [PhotoService, SignalRService, LoginService, SongService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

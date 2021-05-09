@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace Organizer.models
+namespace Organizer.Models
 {
     public partial class Instrument
     {

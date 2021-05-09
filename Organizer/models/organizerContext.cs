@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
-namespace Organizer.models
+namespace Organizer.Models
 {
     public partial class organizerContext : DbContext
     {

@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Organizer.Models;
+using Organizer.Repositories;
 using SignalRChat.Hubs;
 
 namespace Organizer
@@ -38,6 +40,8 @@ namespace Organizer
                 configuration.RootPath = "ClientApp/dist";
             });
             services.AddSignalR();
+
+            services.AddScoped<IRepository<Song>, SongRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

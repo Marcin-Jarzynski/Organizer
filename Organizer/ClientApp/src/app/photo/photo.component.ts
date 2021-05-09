@@ -24,7 +24,7 @@ export class PhotoComponent implements OnInit {
   ngOnInit() {
     this.formData = new FormData();
     this.form = this.formBuilder.group({
-      zdjecie: new FormControl(null)
+      zdjecie: new FormControl()
     })
   }
   onSubmit(){
