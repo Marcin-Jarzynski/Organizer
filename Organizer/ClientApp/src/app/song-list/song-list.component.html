@@ -8,4 +8,10 @@
   <br />
   <button type="submit" [disabled]="!songForm.valid">Submit</button>
 
+
+
 </form>
+
+<div class="list">
+ <p *ngFor="let song of songs"> {{song.name}}</p>
+</div>

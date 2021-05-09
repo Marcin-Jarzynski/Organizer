@@ -32,7 +32,15 @@ namespace Organizer.Controllers
             return Ok();
         }
 
-
-
+        [HttpGet]
+        public IActionResult GetSongList()
+        {
+            var dupa = _songRepository.GetAll();
+            return Ok(dupa);
+             
         }
+
+
+
+    }
 }

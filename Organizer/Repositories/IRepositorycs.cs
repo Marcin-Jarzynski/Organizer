@@ -10,5 +10,7 @@ namespace Organizer.Repositories
         //T GetDetail(Func<T, bool> predicate);
         void Add(T entity);
         void Delete(T entity);
+
+        IEnumerable<T> GetAll();
     }
 }

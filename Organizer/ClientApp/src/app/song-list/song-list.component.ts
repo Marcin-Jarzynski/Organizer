@@ -10,8 +10,9 @@ import { SongService } from '../services/song.service';
 export class SongListComponent implements OnInit {
 
   constructor(private songService: SongService) { }
-
+  songs: any;
   ngOnInit() {
+    this.songService.getSongList().subscribe(data => { this.songs = data });
   }
 
   songForm = new FormGroup({

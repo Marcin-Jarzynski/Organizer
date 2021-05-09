@@ -16,6 +16,12 @@ namespace Organizer.Repositories
         {
             db.Songs.Remove(entity);
         }
+
+        public IEnumerable<Song> GetAll()
+        {
+            return db.Songs.ToList();
+         
+        }
         //public Song GetDetail(Func<Song, bool> predicate)
         //{
         //    return db.Songs.FirstOrDefault(predicate);
