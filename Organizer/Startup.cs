@@ -42,6 +42,8 @@ namespace Organizer
             services.AddSignalR();
 
             services.AddScoped<IRepository<Song>, SongRepository>();
+            services.AddScoped<IRepository<Sheet>, SheetRepository>();
+            services.AddScoped<IRepository<Instrument>, InstrumentRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

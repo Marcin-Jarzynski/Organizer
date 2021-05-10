@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Organizer.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class PhotoController : Controller
     {
         private readonly IWebHostEnvironment _environment;

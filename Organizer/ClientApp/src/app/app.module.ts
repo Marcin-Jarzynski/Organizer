@@ -19,6 +19,7 @@ import { SongService } from './services/song.service';
 
 
 @NgModule({
+
   declarations: [
     AppComponent,
     PhotoComponent,
@@ -34,14 +35,14 @@ import { SongService } from './services/song.service';
     DialogModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: "login", component: LoginComponent},
+      { path: "login", component: LoginComponent, canActivate: [AuthGuard]},
       { path: "fileViewer", component: FileViewerComponent, canActivate: [AuthGuard] },
       { path: "songList", component: SongListComponent, canActivate: [AuthGuard] },
       { path: '**', redirectTo: 'login' }
 
-    ])
+    ], { enableTracing: true })
   ],
   providers: [PhotoService, SignalRService, LoginService, SongService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

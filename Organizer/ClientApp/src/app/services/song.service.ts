@@ -6,9 +6,9 @@ export class SongService {
   constructor(private http: HttpClient) { }
  
   post(value: any) {
-    return this.http.post('http://localhost:5000/Song', value);
+    return this.http.post('http://localhost:5000/api/Song', value);
   }
   getSongList() {
-    return this.http.get('http://localhost:5000/Song');
+    return this.http.get('http://localhost:5000/api/Song');
   }
 }

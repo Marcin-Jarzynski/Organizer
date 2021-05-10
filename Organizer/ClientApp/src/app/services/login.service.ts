@@ -6,7 +6,7 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   post(value: any) {
-    return this.http.post('http://localhost:5000/Login', value);
+    return this.http.post('http://localhost:5000/api/Login', value);
   }
 
 

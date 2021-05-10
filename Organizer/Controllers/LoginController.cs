@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Organizer.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class LoginController : Controller
     {
      
