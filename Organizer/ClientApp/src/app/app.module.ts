@@ -16,6 +16,7 @@ import { LoginService } from './services/login.service';
 import { AuthGuard } from './helpers/auth.guard';
 import { SongListComponent } from './song-list/song-list.component';
 import { SongService } from './services/song.service';
+import { ButtonModule } from 'primeng/button';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { SongService } from './services/song.service';
     FormsModule,
     DialogModule,
     ReactiveFormsModule,
+    ButtonModule,
     RouterModule.forRoot([
       { path: "login", component: LoginComponent, canActivate: [AuthGuard]},
       { path: "fileViewer", component: FileViewerComponent, canActivate: [AuthGuard] },
