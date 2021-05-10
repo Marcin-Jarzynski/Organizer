@@ -6,7 +6,13 @@
     "types": []
   },
   "exclude": [
-    "src/test.ts",
+    "test.ts",
     "**/*.spec.ts"
+  ],
+  "files": [
+    "main.ts",
+    "polyfills.ts",
+    
   ]
 }
+
