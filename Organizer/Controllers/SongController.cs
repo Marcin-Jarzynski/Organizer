@@ -35,8 +35,8 @@ namespace Organizer.Controllers
         [HttpGet]
         public IActionResult GetSongList()
         {
-            var dupa = _songRepository.GetAll();
-            return Ok(dupa);
+            var songList = _songRepository.GetAll();
+            return Ok(songList);
              
         }
 
