@@ -36,8 +36,7 @@ namespace Organizer.Controllers
         public IActionResult GetSongList()
         {
             var songList = _songRepository.GetAll();
-            return Ok(songList);
-             
+            return Ok(songList);           
         }
 
 
