@@ -11,8 +11,12 @@ export class SongListComponent implements OnInit {
 
   constructor(private songService: SongService) { }
   songs: any;
-  ngOnInit() {
+
+  getSongList() {
     this.songService.getSongList().subscribe(data => { this.songs = data });
+  }
+  ngOnInit() {
+    this.getSongList();
   }
 
   songForm = new FormGroup({
@@ -20,7 +24,12 @@ export class SongListComponent implements OnInit {
   });
 
   onSubmit() {
-    this.songService.post(this.songForm.value).subscribe();
+    this.songService.post(this.songForm.value).subscribe(() => {
+      this.getSongList();
+      this.songForm.reset();
+    }
+    );
+   
   }
 
 }
