@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { SongService } from '../services/song.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { SongService } from '../services/song.service';
 })
 export class SongListComponent implements OnInit {
 
-  constructor(private songService: SongService) { }
+  constructor(private songService: SongService, private router: Router) { }
   songs: any;
 
   getSongList() {
@@ -30,6 +31,11 @@ export class SongListComponent implements OnInit {
     }
     );
    
+  }
+
+  selectSong(id) {
+    this.router.navigate(['/song/' + id])
+    console.log(this.router.getCurrentNavigation());
   }
 
 }

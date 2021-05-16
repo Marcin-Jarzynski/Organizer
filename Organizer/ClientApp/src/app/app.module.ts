@@ -40,7 +40,20 @@ import { ButtonModule } from 'primeng/button';
       { path: "login", component: LoginComponent, canActivate: [AuthGuard]},
       { path: "fileViewer", component: FileViewerComponent, canActivate: [AuthGuard] },
       { path: "songList", component: SongListComponent, canActivate: [AuthGuard] },
-      { path: '**', redirectTo: 'login' }
+     
+      
+{
+  path: 'song',
+  component: FileViewerComponent, canActivate: [AuthGuard],
+        children: [
+          {
+            path: 'song/:id', //:id is dynamic here
+            component: FileViewerComponent,
+            canActivate: [AuthGuard]
+          }
+        ]
+      },
+      { path: '**', redirectTo: 'login' },
 
     ], { enableTracing: true })
   ],

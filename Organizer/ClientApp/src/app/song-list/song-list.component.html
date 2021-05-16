@@ -13,5 +13,5 @@
 </form>
 
 <div class="list">
- <p *ngFor="let song of songs"> {{song.name}}</p>
+  <p (click)="selectSong(song.id)" *ngFor="let song of songs"> {{song.name}}</p>
 </div>
