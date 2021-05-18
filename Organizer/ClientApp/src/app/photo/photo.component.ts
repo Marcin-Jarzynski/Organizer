@@ -2,6 +2,8 @@ import { Component, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { EventEmitter } from '@angular/core';
 import { PhotoService } from '../services/photo.service';
+import { InstrumentService } from '../services/instrument.service';
+import { SongService } from '../services/song.service';
 
 @Component({
   selector: 'app-photo',
@@ -9,11 +11,17 @@ import { PhotoService } from '../services/photo.service';
   styleUrls: ['./photo.component.css']
 })
 export class PhotoComponent implements OnInit {
+ 
 
   constructor(
     private formBuilder: FormBuilder,
-    private nutyService: PhotoService
-    ) { }
+    private nutyService: PhotoService,
+    private instrumentService: InstrumentService,
+    private songService: SongService
+
+  ) { }
+  instruments: any
+  songs: any
 
   public form: FormGroup;
   private formData: FormData;
@@ -22,9 +30,12 @@ export class PhotoComponent implements OnInit {
 
 
   ngOnInit() {
+    this.getInstruments();
+    this.getSongs();
     this.formData = new FormData();
     this.form = this.formBuilder.group({
       zdjecie: new FormControl()
+      
     })
   }
   onSubmit(){
@@ -43,5 +54,12 @@ export class PhotoComponent implements OnInit {
      
     }
    
+  }
+
+  getInstruments() {
+    this.instrumentService.getInstrumentList().subscribe(data => { this.instruments = data });
+  }
+  getSongs() {
+    this.songService.getSongList().subscribe(data => {this.songs = data})
   }
 }

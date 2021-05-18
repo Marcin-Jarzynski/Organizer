@@ -9,9 +9,11 @@ import { SongService } from '../services/song.service';
   styleUrls: ['./song-list.component.css']
 })
 export class SongListComponent implements OnInit {
+  display: boolean
 
   constructor(private songService: SongService, private router: Router) { }
   songs: any;
+  
 
   getSongList() {
     this.songService.getSongList().subscribe(data => { this.songs = data });
@@ -36,6 +38,11 @@ export class SongListComponent implements OnInit {
   selectSong(id) {
     this.router.navigate(['/song/' + id])
     console.log(this.router.getCurrentNavigation());
+  }
+
+  showPopup() {
+    this.display = true;
+
   }
 
 }

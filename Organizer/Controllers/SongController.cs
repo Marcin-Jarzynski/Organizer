@@ -28,6 +28,7 @@ namespace Organizer.Controllers
             {
                 Name = request.Name
             };
+            Console.WriteLine("dupa");
             _songRepository.Add(leSong);
             return Ok();
         }

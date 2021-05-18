@@ -15,3 +15,9 @@
 <div class="list">
   <p (click)="selectSong(song.id)" *ngFor="let song of songs"> {{song.name}}</p>
 </div>
+
+<button id="notePopup" (click)="showPopup()" >dodaj nuty</button>
+<p-dialog header="Dodawanie zdjecia" [(visible)]="display">
+    
+  <app-photo (photoAdded)="closeDialog()"></app-photo>
+</p-dialog>

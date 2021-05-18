@@ -17,6 +17,7 @@ import { AuthGuard } from './helpers/auth.guard';
 import { SongListComponent } from './song-list/song-list.component';
 import { SongService } from './services/song.service';
 import { ButtonModule } from 'primeng/button';
+import { InstrumentService } from './services/instrument.service';
 
 
 @NgModule({
@@ -55,7 +56,7 @@ import { ButtonModule } from 'primeng/button';
 
     ], { enableTracing: true })
   ],
-  providers: [PhotoService, SignalRService, LoginService, SongService],
+  providers: [PhotoService, SignalRService, LoginService, SongService, InstrumentService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
