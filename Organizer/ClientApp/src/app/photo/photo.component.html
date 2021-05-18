@@ -1,10 +1,13 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <select name="instruments">
+  Instrument
+  <select formControlName="instrument" class="form-control" >
     <option *ngFor="let instrument of instruments">{{instrument.name}}</option>
   </select>
-  <select name="songs">
+  Piosenka
+  <select formControlName="song" class="form-control" >
     <option *ngFor="let song of songs">{{song.name}}</option>
   </select>
+  Plik
   <input class="form-control" type="file" formControlName="zdjecie" (change)="fileChange($event)">
   <button type="submit">Zapisz</button>
 </form>

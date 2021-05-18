@@ -34,8 +34,9 @@ export class PhotoComponent implements OnInit {
     this.getSongs();
     this.formData = new FormData();
     this.form = this.formBuilder.group({
-      zdjecie: new FormControl()
-      
+      zdjecie: new FormControl(),
+      instrument: new FormControl(),
+      song: new FormControl()
     })
   }
   onSubmit(){
